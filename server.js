@@ -1,12 +1,16 @@
 var http = require('http');
 var fs = require('fs');
 var sys = require('sys');
+var express = require('express');
+const PORT = 8888;
+const HOST = '0.0.0.0';
 
-http.createServer(function(req, res){
-    fs.readFile('test.html',function (err, data){
-        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
-        res.write(data);
-        res.end();
-    });
-}).listen(8888);
 
+var app = module.exports = express.createServer();
+
+app.use(express.static(__dirname + '/public'));
+
+if (!module.parent) {
+    app.listen(PORT, HOST);
+    console.log("Express server listening on port %d", PORT);
+ }
