@@ -20,7 +20,7 @@
           ['Skinka', 3],
           ['Salami', 1],
           ['Leverpastej', 1],
-          ['Brieost', 1]
+          ['Gruyère', 1]
         ]);
 
         // Set chart options
