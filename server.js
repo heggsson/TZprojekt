@@ -12,9 +12,28 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/forsaljning', function(req, res) {
 	res.send([
-		['Skinka', 1 ], ['Salami', 3]
+		['Skinka', 1 ], ['Salami', 3], ['Brieost', 5], ['Kalkon', 4]
 	]);
 });
+
+app.get('/companyPerformance', function(req, res) {
+	res.send([ 
+		['Year', 'Sales', 'Expenses'],
+        ['2004', 10000, 12000],
+        ['2005', 12000, 900],
+        ['2006', 9000, 5000],
+        ['2007', 13000, 10000]
+         ]);
+});
+
+app.get('/dagsForsalj', function(req, res) {
+	res.send([
+          ['Label', 'Value'],
+          ['Mkr', 80]
+          ]);
+});
+
+
 
 if (!module.parent) {
     app.listen(PORT, HOST);
