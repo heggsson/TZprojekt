@@ -19,7 +19,7 @@
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
+        data.addColumn('number', 'Onions');
         //data.addRows(app.write());
         data.addRows(pie_data);
 
