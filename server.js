@@ -38,15 +38,32 @@ app.get('/dagsForsalj', function(req, res) {
 
 app.get('/report', function(req, res) {
   res.send([
-      ['Day', 'schemalagda h', 'Rapporterade h'],
-          ['Monday', 800, 400],
-          ['Tuesday', 650, 475],
-          ['Wednesday', 1000, 999],
-          ['Thursday', 765, 540],
-          ['Friday', 1030, 540]
+      ['Day', 'Schemalagda h', 'Rapporterade h'],
+          ['Måndag', 800, 400],
+          ['Tisdag', 650, 475],
+          ['Onsdag', 1000, 999],
+          ['Torsdag', 765, 540],
+          ['Fredag', 1030, 540]
   ]);
 });
 
+app.get('/users', function(req, res) {
+  res.send([
+    ['x', 'Aktiva', 'Orapporterade pass', 'Inaktiva'],
+    ['Januari',   100,       111,       12],
+    ['Februari',  120,       50,         20],
+    ['Mars',   125,       88,           5],
+    ['April',   120,       20,         10],
+    ['Maj',   98,       96,           10],
+    ['Juni',   100,       120,           27],
+    ['Juli',   100,       111,       12],
+    ['Augusti',  120,       50,         20],
+    ['September',   125,       88,           5],
+    ['Oktober',   120,       20,         10],
+    ['November',   98,       96,           10],
+    ['December',   100,       120,           27]
+  ]);
+});
 
 
 if (!module.parent) {
