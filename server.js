@@ -36,6 +36,17 @@ app.get('/dagsForsalj', function(req, res) {
           ]);
 });
 
+app.get('/report', function(req, res) {
+  res.send([
+      ['Day', 'schemalagda h', 'Rapporterade h'],
+          ['Monday', 800, 400],
+          ['Tuesday', 650, 475],
+          ['Wednesday', 1000, 999],
+          ['Thursday', 765, 540],
+          ['Friday', 1030, 540]
+  ]);
+});
+
 
 
 if (!module.parent) {

@@ -17,7 +17,7 @@
 	  	<!--Load the gauge.js-->
 	  	<script src="gauge.js"> </script>
 	  	<!--Load the nav.js-->
-	  	<script src="nav.js"> </script>
+	  	<script src="report.js"> </script>
 
   </head>
   <body>
@@ -28,13 +28,26 @@
   			<div id="navigation">
   				<ul class="nav nav-tabs">
 				    <li class="active"><a href="#pie_div" data-toggle="tab">Pie</a></li>
-				    <li><a href="#line_div" data-toggle="tab">Line</a></li>
-				    <li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
+				    <li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							Dropdown
+							<b class="caret"></b>
+						</a>
+					<ul class="dropdown-menu">
+						<!-- links -->
+						<li><a href="#report_div" data-toggle="tab">Status tidrapporter</a></li>
+						<li><a href="#line_div" data-toggle="tab">Line</a></li>
+						<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
+					</ul>
+					</li>
+
+
     			</ul>
     			<div class="tab-content">
 					<div id="pie_div" class="tab-pane active"></div>
 					<div id="line_div" class="tab-pane"></div>	
-					<div id="gauge_div" class="tab-pane"></div> 
+					<div id="gauge_div" class="tab-pane"></div>
+					<div id="report_div" class="tab-pane"></div> 
 				</div>
   			</div>
   		</div>
