@@ -3,9 +3,13 @@
 	  	<title>Diagram</title>
 	  	<!--Load stylesheet-->
 	  	<link href="style.css" rel="stylesheet" type="text/css" />
+	  	<!--Load bootstrap stylesheet-->
+	  	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	  	<!--Load the AJAX API-->
 	  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <!--Load Bootstrap jsAPI-->
+	    <script src="bootstrap/js/bootstrap.min.js"></script>
 	    <!--Load the pie.js-->
 	  	<script src="pie.js"> </script>
 	  	<!--Load the line.js-->
@@ -17,18 +21,23 @@
 
   </head>
   <body>
-  		<div id="container">
-  			<div id="header">
-  				<h1>TimeZynk Reports</h1>
-  			</div>
+  		<div class="container">
+  			    <div class="page-header">
+    				<h1>TimeZynk <small>Reports</small></h1>
+    			</div>
   			<div id="navigation">
-
+  				<ul class="nav nav-tabs">
+				    <li class="active"><a href="#pie_div" data-toggle="tab">Pie</a></li>
+				    <li><a href="#line_div" data-toggle="tab">Line</a></li>
+				    <li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
+    			</ul>
+    			<div class="tab-content">
+				<div id="pie_div" class="tab-pane active"></div>
+		<div id="line_div" class="tab-pane"></div>	
+		<div id="gauge_div" class="tab-pane"></div> 
+	</div>
   			</div>
   		</div>
   		
-  		<div id="header"></div>
-		<div id="pie_div"></div>
-		<div id="line_div"></div>	
-		<div id="gauge_div"></div> 
   </body>
 </html>

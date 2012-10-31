@@ -10,11 +10,13 @@ var app = module.exports = express.createServer();
 
 app.use(express.static(__dirname + '/public'));
 
+
 app.get('/forsaljning', function(req, res) {
 	res.send([
 		['Skinka', 1 ], ['Salami', 3], ['Brieost', 5], ['Kalkon', 4]
 	]);
 });
+
 
 app.get('/companyPerformance', function(req, res) {
 	res.send([ 
@@ -25,6 +27,7 @@ app.get('/companyPerformance', function(req, res) {
         ['2007', 13000, 10000]
          ]);
 });
+
 
 app.get('/dagsForsalj', function(req, res) {
 	res.send([

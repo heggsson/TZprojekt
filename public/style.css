@@ -1,4 +1,11 @@
-h1{
+.page-header{
 	text-align: center;
-	font-family: arial;
+}
+
+#header{
+	height: 100px;
+}
+
+#navigations{
+	height: 80px;
 }
