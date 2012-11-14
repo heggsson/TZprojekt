@@ -47,15 +47,17 @@ app.get('/dagsForsalj', function(req, res) {
 });
 
 app.get('/report', function(req, res) {
-  res.send([
-      ['Day', 'Schemalagda h', 'Rapporterade h'],
-          ['Måndag', 800, 400],
-          ['Tisdag', 650, 475],
-          ['Onsdag', 1000, 999],
-          ['Torsdag', 765, 540],
-          ['Fredag', 1030, 540]
+  res.send([      
+    ['Namn', 'Timmar'],
+    ['Kalle',  120],
+    ['Muhammet',  100],
+    ['Ida',  15],
+    ['Heggsson',  8],
+    ['Sivan',  140],
+    ['Bengt',  80]
   ]);
 });
+
 
 app.get('/users', function(req, res) {
   res.send([
