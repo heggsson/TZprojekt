@@ -14,9 +14,12 @@ function drawLine(line_data) {
         var data = new google.visualization.arrayToDataTable(line_data);
 
         var options = {
-          title: 'Company Performance',
+          title: 'Förändring av schemalagd tid',
           'width':900,
-          'height':500
+          'height':500,
+          vAxis: {title: "Timmar"},
+          hAxis: {title: "Tidsintervall (år)"}
+          //hAxis.textPosition: 'none'
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('line_div'));

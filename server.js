@@ -2,6 +2,8 @@ var http = require('http');
 var fs = require('fs');
 var sys = require('sys');
 var express = require('express');
+
+
 const PORT = 8888;
 const HOST = '0.0.0.0';
 
@@ -20,11 +22,19 @@ app.get('/forsaljning', function(req, res) {
 
 app.get('/companyPerformance', function(req, res) {
 	res.send([ 
-		['Year', 'Sales', 'Expenses'],
-        ['2004', 10000, 12000],
-        ['2005', 12000, 900],
-        ['2006', 9000, 5000],
-        ['2007', 13000, 10000]
+		['Tid', 'Lisa', 'Kalle', 'Bengt'],
+        ['2004', 20, 100, -10 ],
+        ['2005', 12, 90, 20],
+        ['2006', -32, 5, 0],
+        ['2007', 13, 10, 0],
+        ['2008', 20, 100, -10 ],
+        ['2009', 12, 90, 20],
+        ['2010', -32, 5, 0],
+        ['2011', 13, 10, 0],
+        ['2012', 20, 100, -10 ],
+        ['2013', 12, 90, 20],
+        ['2014', -32, 5, 0],
+        ['2015', 13, 10, 0]
          ]);
 });
 
