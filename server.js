@@ -38,6 +38,16 @@ app.get('/companyPerformance', function(req, res) {
          ]);
 });
 
+app.get('/overtime', function(req, res) {
+    res.send([
+    ['Jan Jansson', 10, 12, 0, 5, 6, 9, 12, 30, 22, 4, 15, 7],
+    ['Batman', 10, 12, 0, 5, 6, 9, 12, 30, 20, 24, 5, 5],
+    ['Karl Alfred', 10, 12, 0, 5, 6, 9, 12, 31, 12, 4, 15, 7],
+    ['Kalle Kula', 10, 12, 0, 5, 6, 9, 12, 30, 22, 4, 15, 7]
+    
+  ]);
+});
+
 
 app.get('/dagsForsalj', function(req, res) {
 	res.send([
