@@ -27,9 +27,11 @@
     data.addRows(tableData);
     var table = new google.visualization.Table(document.getElementById('overtime_div'));
   
+ 
+
     var formatter = new google.visualization.ColorFormat();
-    formatter.addRange(0, 10, '#A2CD5A', 'white');
-    formatter.addRange(10, 20, 'red', 'white');
+    formatter.addRange(0, 10, '#008F00', 'white');
+    formatter.addRange(10, 500, 'red', 'none');
     formatter.format(data, 1); // Apply formatter to second column  
     formatter.format(data, 2);
     formatter.format(data, 3);

@@ -5,4 +5,20 @@
 .container{
 	width: auto;
 	min-width: 1000px;
+	min-height: 1000px;
+}
+
+#pie_content{
+	width: 950px;
+	text-align: center;
+}
+
+#pie_options{
+	height: 30px;
+}
+
+#pie_div{
+	float: right;
+	margin-right: 50px;
+	
 }

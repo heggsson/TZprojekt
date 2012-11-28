@@ -24,8 +24,8 @@
         data.addRows(pie_data);
 
         // Set chart options
-        var options = {'title':'Forsaljningsandelar charken ICA',
-                       'width':800,
+        var options = {'title':'Resursfördelning per projekt',
+                       'width':700,
                        'height':600};
 
         // Instantiate and draw our chart, passing in some options.

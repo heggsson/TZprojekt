@@ -16,12 +16,16 @@
 	  	<script src="line.js"> </script>
 	  	<!--Load the gauge.js-->
 	  	<script src="gauge.js"> </script>
-	  	<!--Load the report.js-->
-	  	<script src="report.js"> </script>
+	  	<!--Load the reportedHours.js-->
+	  	<script src="reportedHours.js"> </script>
+	  	<!--Load the unreported.js-->
+	  	<script src="unreported.js"> </script>	  	
 	  	<!--Load the userstatus.js-->
 	  	<script src="userstatus.js"> </script>
 	  	<!--Load the overtime.js-->
 	  	<script src="overtime.js"> </script>
+	  	<!--Load the absence.js-->
+	  	<script src="absence.js"> </script>
 
   </head>
   <body>
@@ -31,30 +35,47 @@
     		</div>
   			<div id="navigation">
   				<ul class="nav nav-tabs">
-				    <li class="active"><a href="#pie_div" data-toggle="tab">Pie Test</a></li>
-				    <li><a href="#overtime_div" data-toggle="tab">Overtime</a></li>
-				    <li class="dropdown">
+				    <li class="active"><a href="#pie_content" data-toggle="tab">Resursfördelning</a></li>
+				    <li><a href="#overtime_div" data-toggle="tab">Övertid</a></li>
+				    <li><a href="#absence_div" data-toggle="tab">Frånvaro</a></li>
+				    <li><a href="#reportedHours_div" data-toggle="tab">Status tidrapporter</a></li>
+				    <li><a href="#unreportedHours_div" data-toggle="tab">Orapporterade tidrapporter</a></li>
+					<li><a href="#user_div" data-toggle="tab">Status användare</a></li>
+					<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>
+					<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
+				    <!--<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 							<b class="caret"></b>
 							Timrapporter
 						</a>
 					<ul class="dropdown-menu">
-						<li><a href="#report_div" data-toggle="tab">Status tidrapporter</a></li>
+						<li><a href="#reportedHours_div" data-toggle="tab">Status tidrapporter</a></li>
 						<li><a href="#user_div" data-toggle="tab">Status användare</a></li>
 						<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>
 						<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
 					</ul>
-					</li>
+					</li>-->
 
 
     			</ul>
     			<div class="tab-content">
-					<div id="pie_div" class="tab-pane active"></div>
+					<div id="pie_content" class="tab-pane active">
+						<div id="pie_options" class="tab-pane">
+							<ul class="nav nav-pills">
+								<li><a href="#">Per projekt</a></li>
+								<li><a href="#">Alternativ 2</a></li>
+								<li><a href="#">Alternativ 3</a></li>
+							</ul>
+						</div>
+						<div id="pie_div" class="tab-pane"></div>
+					</div>
 					<div id="line_div" class="tab-pane"></div>	
 					<div id="gauge_div" class="tab-pane"></div>
-					<div id="report_div" class="tab-pane"></div>
+					<div id="reportedHours_div" class="tab-pane"></div>
+					<div id="unreportedHours_div" class="tab-pane"></div>
 					<div id="user_div" class="tab-pane"></div> 
 					<div id="overtime_div" class="tab-pane"></div> 
+					<div id="absence_div" class="tab-pane"></div> 
 				</div>
   			</div>
   		</div>

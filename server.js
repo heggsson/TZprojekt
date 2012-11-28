@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/forsaljning', function(req, res) {
 	res.send([
-		['Skinka', 1 ], ['Salami', 3], ['Brieost', 5], ['Kalkon', 4]
+		['Projekt1', 1 ], ['Projekt2', 3], ['Projekt3', 5], ['Projekt4', 4]
 	]);
 });
 
@@ -48,6 +48,15 @@ app.get('/overtime', function(req, res) {
   ]);
 });
 
+app.get('/absence', function(req, res) {
+    res.send([
+    ['Jan Jansson', 0, 24, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Batman', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Karl Alfred', 0, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0],
+    ['Kalle Kula', 0, 0, 0, 0, 8, 0, 0, 16, 0, 40, 40, 0]
+    
+  ]);
+});
 
 app.get('/dagsForsalj', function(req, res) {
 	res.send([
@@ -56,7 +65,7 @@ app.get('/dagsForsalj', function(req, res) {
           ]);
 });
 
-app.get('/report', function(req, res) {
+app.get('/reportedHours', function(req, res) {
   res.send([      
     ['Namn', 'Timmar'],
     ['Kalle',  120],
@@ -65,6 +74,18 @@ app.get('/report', function(req, res) {
     ['Heggsson',  8],
     ['Sivan',  140],
     ['Bengt',  80]
+  ]);
+});
+
+app.get('/unreportedHours', function(req, res) {
+  res.send([      
+    ['Namn', 'Antal pass'],
+    ['Kalle',  5],
+    ['Muhammet',  7],
+    ['Ida',  0],
+    ['Heggsson',  1],
+    ['Sivan',  5],
+    ['Bengt',  9]
   ]);
 });
 
