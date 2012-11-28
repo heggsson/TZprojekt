@@ -13,14 +13,19 @@ var app = module.exports = express.createServer();
 app.use(express.static(__dirname + '/public'));
 
 
-app.get('/forsaljning', function(req, res) {
+app.get('/reportedProjectHours', function(req, res) {
 	res.send([
-		['Projekt1', 1 ], ['Projekt2', 3], ['Projekt3', 5], ['Projekt4', 4]
+		['Projekt1', 100 ], ['Projekt2', 150], ['Projekt3', 70], ['Projekt4', 230]
 	]);
 });
 
+app.get('/certifiedProjectHours', function(req, res) {
+    res.send([
+        ['Projekt1', 70 ], ['Projekt2', 120], ['Projekt3', 50], ['Projekt4', 210]
+    ]);
+});
 
-app.get('/companyPerformance', function(req, res) {
+/*app.get('/companyPerformance', function(req, res) {
 	res.send([ 
 		['Tid', 'Lisa', 'Kalle', 'Bengt'],
         ['2004', 20, 100, -10 ],
@@ -36,7 +41,7 @@ app.get('/companyPerformance', function(req, res) {
         ['2014', -32, 5, 0],
         ['2015', 13, 10, 0]
          ]);
-});
+});*/
 
 app.get('/overtime', function(req, res) {
     res.send([
@@ -58,12 +63,12 @@ app.get('/absence', function(req, res) {
   ]);
 });
 
-app.get('/dagsForsalj', function(req, res) {
+/*app.get('/dagsForsalj', function(req, res) {
 	res.send([
           ['Label', 'Value'],
           ['Mkr', 80]
           ]);
-});
+});*/
 
 app.get('/reportedHours', function(req, res) {
   res.send([      
@@ -89,8 +94,30 @@ app.get('/unreportedHours', function(req, res) {
   ]);
 });
 
+app.get('/projectstatus', function(req, res) {
+    res.send([
+    ['Vecka', 'Timmar kvar'],
+    ['1', 1000],
+    ['2', 950],
+    ['3', 900],
+    ['4', 850],
+    ['5', 500],
+    ['6', -10],
+    ['7', -100]
 
-app.get('/users', function(req, res) {
+        ])
+});
+
+app.get('/occupancy', function(req, res) {
+    res.send([
+    ['Year', 'Tillgänglighet (h)', 'Utbokat (h)'],
+    ['2003', 1336060, 400361]
+    ])
+
+});
+
+
+/*app.get('/users', function(req, res) {
   res.send([
     ['x', 'Aktiva', 'Orapporterade pass', 'Inaktiva'],
     ['Januari',   100,       111,       12],
@@ -106,7 +133,7 @@ app.get('/users', function(req, res) {
     ['November',   98,       96,           10],
     ['December',   100,       120,           27]
   ]);
-});
+});*/
 
 
 if (!module.parent) {
