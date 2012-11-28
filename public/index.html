@@ -13,19 +13,21 @@
 	    <!--Load the pie.js-->
 	  	<script src="pie.js"> </script>
 	  	<!--Load the line.js-->
-	  	<script src="line.js"> </script>
+	  	<!--<script src="line.js"> </script>-->
 	  	<!--Load the gauge.js-->
-	  	<script src="gauge.js"> </script>
+	  	<!--<script src="gauge.js"> </script>-->
 	  	<!--Load the reportedHours.js-->
 	  	<script src="reportedHours.js"> </script>
 	  	<!--Load the unreported.js-->
 	  	<script src="unreported.js"> </script>	  	
 	  	<!--Load the userstatus.js-->
-	  	<script src="userstatus.js"> </script>
+	  	<!--<script src="userstatus.js"> </script>-->
 	  	<!--Load the overtime.js-->
 	  	<script src="overtime.js"> </script>
 	  	<!--Load the absence.js-->
 	  	<script src="absence.js"> </script>
+	  	<script src="projectstatus.js"> </script>
+
 
   </head>
   <body>
@@ -36,13 +38,13 @@
   			<div id="navigation">
   				<ul class="nav nav-tabs">
 				    <li class="active"><a href="#pie_content" data-toggle="tab">Resursfördelning</a></li>
-				    <li><a href="#overtime_div" data-toggle="tab">Övertid</a></li>
-				    <li><a href="#absence_div" data-toggle="tab">Frånvaro</a></li>
-				    <li><a href="#reportedHours_div" data-toggle="tab">Status tidrapporter</a></li>
-				    <li><a href="#unreportedHours_div" data-toggle="tab">Orapporterade tidrapporter</a></li>
-					<li><a href="#user_div" data-toggle="tab">Status användare</a></li>
-					<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>
-					<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
+				    <li><a href="#overtime_content" data-toggle="tab">Övertid</a></li>
+				    <li><a href="#absence_content" data-toggle="tab">Frånvaro</a></li>
+				    <li><a href="#reportedHours_content" data-toggle="tab">Status tidrapporter</a></li>
+				    <li><a href="#unreportedHours_content" data-toggle="tab">Orapporterade tidrapporter</a></li>
+					<!--<li><a href="#user_div" data-toggle="tab">Status användare</a></li>-->
+					<!--<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>-->
+					<!--<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>-->
 				    <!--<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
 							<b class="caret"></b>
@@ -55,6 +57,7 @@
 						<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
 					</ul>
 					</li>-->
+				    <li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
 
 
     			</ul>
@@ -62,20 +65,69 @@
 					<div id="pie_content" class="tab-pane active">
 						<div id="pie_options" class="tab-pane">
 							<ul class="nav nav-pills">
-								<li><a href="#">Per projekt</a></li>
-								<li><a href="#">Alternativ 2</a></li>
-								<li><a href="#">Alternativ 3</a></li>
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
 							</ul>
 						</div>
 						<div id="pie_div" class="tab-pane"></div>
+						<div id="pie_divII" class="tab-pane"></div>
 					</div>
-					<div id="line_div" class="tab-pane"></div>	
-					<div id="gauge_div" class="tab-pane"></div>
-					<div id="reportedHours_div" class="tab-pane"></div>
-					<div id="unreportedHours_div" class="tab-pane"></div>
-					<div id="user_div" class="tab-pane"></div> 
-					<div id="overtime_div" class="tab-pane"></div> 
-					<div id="absence_div" class="tab-pane"></div> 
+					<!--<div id="line_div" class="tab-pane"></div>	-->
+					<!--<div id="gauge_div" class="tab-pane"></div>-->
+					<div id="reportedHours_content" class="tab-pane">
+						<div id="reportedHours_options" class="tab-pane">
+							<ul class="nav nav-pills">
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
+							</ul>
+						</div>
+						<div id="occupancy_div" class="tab-pane"></div>
+						<div id="reportedHours_div" class="tab-pane"></div>
+
+					</div>
+					<div id="unreportedHours_content" class="tab-pane">
+						<div id="unreportedHours_options" class="tab-pane">
+							<ul class="nav nav-pills">
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
+							</ul>
+						</div>
+						<div id="unreportedHours_div" class="tab-pane"></div>
+					</div>
+					<!--<div id="user_div" class="tab-pane"></div>-->
+					<div id="overtime_content" class="tab-pane">
+						<div id="overtime_options" class="tab-pane">
+							<!--<ul class="nav nav-pills">
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
+							</ul>-->
+						</div>
+						<div id="overtime_div" class="tab-pane"></div>
+					</div>
+					<div id="absence_content" class="tab-pane">
+						<div id="absence_options" class="tab-pane">
+							<!--<ul class="nav nav-pills">
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
+							</ul>-->
+						</div>
+						<div id="absence_div" class="tab-pane"></div>
+					</div>
+					<div id="projectstatus_content" class="tab-pane">
+						<div id="projectstatus_options" class="tab-pane">
+							<!--<ul class="nav nav-pills">
+								<li><a href="#">Månad</a></li>
+								<li><a href="#">Kvartal</a></li>
+								<li><a href="#">År</a></li>
+							</ul>-->
+						</div>
+						<div id="projectstatus_div" class="tab-pane"></div>
+					</div>
 				</div>
   			</div>
   		</div>

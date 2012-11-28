@@ -10,7 +10,9 @@
 
 #pie_content{
 	width: 950px;
-	text-align: center;
+	/*text-align: center;*/
+	float: left;
+	overflow: hidden;
 }
 
 #pie_options{
@@ -19,6 +21,14 @@
 
 #pie_div{
 	float: right;
-	margin-right: 50px;
-	
+	max-width: 400px;
+	width: auto;
+	margin: auto;
+}
+
+#pie_divII{
+	float: left;
+	width: auto;
+	max-width: 400px;
+	margin: auto;
 }
