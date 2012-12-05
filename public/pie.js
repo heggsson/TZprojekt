@@ -9,7 +9,7 @@
 
       function on_load() {
         $.getJSON('/certifiedProjectHours', drawPieI);
-        $.getJSON('/reportedProjectHours', drawPieII)
+        $.getJSON('/reportedProjectHours', drawPieII);
       }
 
       // Callback that creates and populates a data table,
