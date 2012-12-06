@@ -116,6 +116,72 @@ app.get('/occupancy', function(req, res) {
 
 });
 
+app.get('/personalHours', function(req, res) {
+    res.send([
+        ['Månad', 'Timmar'],
+        ['Jan', 140],
+        ['Feb', 148],
+        ['Mar', 170],
+        ['Maj', 175],
+        ['Jun', 150],
+        ['Jul', 167],
+        ['Aug', 45],
+        ['Sep', 122],
+        ['Okt', 160],
+        ['Nov', 174],
+        ['Dec', 138]
+        ])
+});
+
+app.get('/personalProjectHours', function(req, res) {
+    res.send([
+        ['Projekt1', 100 ], ['Projekt2', 150], ['Projekt3', 70], ['Projekt4', 230]
+        ])
+});
+
+app.get('/personalOvertime', function(req, res) {
+    res.send([
+        ['Månad', 'Timmar'],
+        ['Jan', 0],
+        ['Feb', 0],
+        ['Mar', 14],
+        ['Maj', 15],
+        ['Jun', 0],
+        ['Jul', 3],
+        ['Aug', 0],
+        ['Sep', 0],
+        ['Okt', 0],
+        ['Nov', 8],
+        ['Dec', 0]
+        ])
+});
+
+app.get('/personalUndertime', function(req, res) {
+    res.send([
+        ['Månad', 'Timmar'],
+        ['Jan', 10],
+        ['Feb', 0],
+        ['Mar', 14],
+        ['Maj', 15],
+        ['Jun', 24],
+        ['Jul', 0],
+        ['Aug', 0],
+        ['Sep', 0],
+        ['Okt', 16],
+        ['Nov', 0],
+        ['Dec', 0]
+        ])
+});
+
+app.get('/personalUnreported', function(req, res) {
+    res.send([
+        ['Namn', 'Antal pass'],
+        ['Heggsson',  7]
+        ])
+});
+
+
+
 
 /*app.get('/users', function(req, res) {
   res.send([
@@ -136,7 +202,11 @@ app.get('/occupancy', function(req, res) {
 });*/
 
 
+
+
 if (!module.parent) {
     app.listen(PORT, HOST);
     console.log("Express server listening on port %d", PORT);
  }
+
+
