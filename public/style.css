@@ -4,7 +4,7 @@
 
 .container{
 	width: auto;
-	min-width: 1000px;
+	min-width: 1500px;
 	min-height: 1000px;
 }
 
@@ -33,10 +33,56 @@
 	margin: auto;
 }
 
+#personal_content{
+	width: 1300px;
+}
+
 #personal_options{
-	position: relative;
+	width: 1200px;
+	/*position: relative;*/
 }
 
 h1{
-	text-align: center;
+
 }
+
+#personal_div{
+	width: 643px;
+	height: 400px;
+	float:left;
+	margin-bottom: 25px;
+}
+
+#personal_divII{
+	width:643px;
+	height: 400px;
+	float: right;
+	border-left-style: solid;
+	border-left-color: #DCDCDC;
+	border-left-width: 1px;
+	margin-bottom: 25px;
+}
+
+#personal_divIII{
+	width: 643px;
+	height: 400px;
+	float:left;
+}
+
+#personal_divIV{
+	width:643px;
+	height: 400px;
+	float: right;
+	border-left-style: solid;
+	border-left-color: #DCDCDC;
+	border-left-width: 1px;
+}
+
+#personal_divV{
+	width: 800px;
+	height: 400px;
+	float:left;
+	margin-left: 50px;
+	margin-top: 50px;
+}
+

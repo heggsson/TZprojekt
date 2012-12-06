@@ -175,7 +175,7 @@ app.get('/personalUndertime', function(req, res) {
 
 app.get('/personalUnreported', function(req, res) {
     res.send([
-        ['Namn', 'Antal pass'],
+        ['Namn', 'Antal'],
         ['Heggsson',  7]
         ])
 });

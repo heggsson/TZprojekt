@@ -19,8 +19,9 @@
         var options = {
           title: 'Arbetad tid',
           hAxis: {title: 'Tidsperiod', titleTextStyle: {color: 'red'}},
-          'width':800,
-          'height':600
+          'width':600,
+          'height':400
+          
           
         };
 
@@ -83,8 +84,8 @@
         var options = {
           title: 'Orapporterade pass',
           hAxis: {title: 'Antal pass'},
-          'width':400,
-          'height':200,
+          'width':700,
+          'height':100,
           colors: ['red']
         };
 
