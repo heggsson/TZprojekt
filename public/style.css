@@ -51,6 +51,9 @@ h1{
 	height: 400px;
 	float:left;
 	margin-bottom: 25px;
+	border-bottom-style: solid;
+	border-bottom-color: #DCDCDC;
+	border-bottom-width: 1px;
 }
 
 #personal_divII{
