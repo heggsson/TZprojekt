@@ -5,28 +5,9 @@
       google.setOnLoadCallback(on_load);
 
       function on_load() {
-        $.getJSON('/personalHours', drawPersonalHours);
+        $.getJSON('/personal_II', drawPersonal_II);
         $.getJSON('/personalProjectHours', drawPersonalProjectHours);
-        $.getJSON('/personalOvertime', drawPersonalOvertime);
-        $.getJSON('/personalUndertime', drawPersonalUndertime);
-        $.getJSON('/personalUnreported', drawPersonalUnreported);
-      }
-
-      
-      function drawPersonalHours(personalHours) {
-        var data = google.visualization.arrayToDataTable(personalHours);
-
-        var options = {
-          title: 'Arbetad tid',
-          hAxis: {title: 'Tidsperiod', titleTextStyle: {color: 'red'}},
-          'width':600,
-          'height':400
-          
-          
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('personal_div'));
-        chart.draw(data, options);
+        $.getJSON('/projectstatuspersonal', drawStatuspersonal);
       }
 
       function drawPersonalProjectHours(personalProjectHours) {
@@ -35,60 +16,46 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Onions');
+        //data.addRows(app.write());
         data.addRows(personalProjectHours);
 
         // Set chart options
-        var options = {'title':'Arbetade timmar per projekt',
-                       'width':600,
-                       'height':400};
+        var options = {'title':'Resursfördelning: Attesterade h per projekt',
+                       'width':450,
+                       'height':300};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('personal_divII'));
         chart.draw(data, options);
       }
 
-      function drawPersonalOvertime(personalOvertime) {
-        var data = google.visualization.arrayToDataTable(personalOvertime);
 
-        var options = {
-          title: 'Övertid',
-          hAxis: {title: 'Tidsperiod', titleTextStyle: {color: 'red'}},
-          'width':600,
-          'height':400
-          
-        };
+      function drawPersonal_II(personal) {
+          var data = google.visualization.arrayToDataTable(personal);
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('personal_divIII'));
-        chart.draw(data, options);
+          var options = {
+            title: 'Personöversikt',
+            hAxis: {title: 'Månad', titleTextStyle: {color: 'black'}, slantedText:true},
+            width: 1100, height: 700
+          };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
+          chart.draw(data, options);
       }
 
-      function drawPersonalUndertime(personalUndertime) {
-        var data = google.visualization.arrayToDataTable(personalUndertime);
+      function drawStatuspersonal(projectstatuspersonal) {
+        var data = google.visualization.arrayToDataTable(projectstatuspersonal);
 
         var options = {
-          title: 'Frånvaro',
-          hAxis: {title: 'Tidsperiod', titleTextStyle: {color: 'red'}},
+          title: 'Projektstatus',
+          hAxis: {title: 'Vecka'},
+          vAxis: {title: 'Timbudget'},
           'width':600,
           'height':400,
-          colors: ['red']
-          
+          colors: ['green']
         };
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('personal_divIV'));
+      
+        var chart = new google.visualization.AreaChart(document.getElementById('projectstatuspersonal_div'));
         chart.draw(data, options);
-      }
-
-      function drawPersonalUnreported(personalUnreported) {
-        var data = google.visualization.arrayToDataTable(personalUnreported);
-
-        var options = {
-          title: 'Orapporterade pass',
-          hAxis: {title: 'Antal pass'},
-          'width':700,
-          'height':100,
-          colors: ['red']
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('personal_divV'));
-        chart.draw(data, options)
       }

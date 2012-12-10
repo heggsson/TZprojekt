@@ -12,10 +12,6 @@
 	    <script src="bootstrap/js/bootstrap.min.js"></script>
 	    <!--Load the pie.js-->
 	  	<script src="pie.js"> </script>
-	  	<!--Load the line.js-->
-	  	<!--<script src="line.js"> </script>-->
-	  	<!--Load the gauge.js-->
-	  	<!--<script src="gauge.js"> </script>-->
 	  	<!--Load the reportedHours.js-->
 	  	<script src="reportedHours.js"> </script>
 	  	<!--Load the unreported.js-->
@@ -26,10 +22,11 @@
 	  	<script src="overtime.js"> </script>
 	  	<!--Load the absence.js-->
 	  	<script src="absence.js"> </script>
+	  	<!--Load the projectstatus.js-->
 	  	<script src="projectstatus.js"> </script>
+	  	<!--Load the personal.js-->
 	  	<script src="personal.js"> </script>
-
-
+	  	<!--<script src="personalPie.js"></script>-->
   </head>
   <body>
   		<div class="container">
@@ -38,7 +35,7 @@
     		</div>
   			<div id="navigation">
 
-  				<ul class="nav nav-tabs">
+  				<ul id="navi" class="nav nav-tabs">
   					<li class="dropdown">
     					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
     						Bolag
@@ -88,35 +85,8 @@
     						<li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
     					</ul>
     				</li>
+    				<li><a href="#person_II" data-toggle="tab">Alternativ personlig</a></li>
 				</ul>
-  				<!--<ul class="nav nav-tabs">
-				    <li class="active">
-				    	<a href="#pie_content" data-toggle="tab">Resursfördelning</a></li>
-				    <li><a href="#overtime_content" data-toggle="tab">Övertid</a></li>
-				    <li><a href="#absence_content" data-toggle="tab">Frånvaro</a></li>
-				    <li><a href="#reportedHours_content" data-toggle="tab">Status tidrapporter</a></li>
-				    <li><a href="#unreportedHours_content" data-toggle="tab">Orapporterade tidrapporter</a></li>
-				    
-					<!--<li><a href="#user_div" data-toggle="tab">Status användare</a></li>-->
-					<!--<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>-->
-					<!--<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>-->
-				    <!--<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<b class="caret"></b>
-							Timrapporter
-						</a>
-					<ul class="dropdown-menu">
-						<li><a href="#reportedHours_div" data-toggle="tab">Status tidrapporter</a></li>
-						<li><a href="#user_div" data-toggle="tab">Status användare</a></li>
-						<li><a href="#line_div" data-toggle="tab">Förändring tidrapporter</a></li>
-						<li><a href="#gauge_div" data-toggle="tab">Gauge</a></li>
-					</ul>
-					</li>
-				    <li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
-				    <li><a href="#personal_content" data-toggle="tab">Personlig översikt</a></li>
-
-
-    			</ul>-->
     			<div class="tab-content">
 					<div id="pie_content" class="tab-pane active">
 						<div id="pie_options" class="tab-pane">
@@ -203,16 +173,11 @@
 							  </ul>
 							</div>-->
 						</div>
-							<div id="personal_div" class="tab-pane"></div>
+							<div id="person_II" class="tab-pane"></div>
+							<div id="projectstatuspersonal_div" class="tab-pane"></div>
 							<div id="personal_divII" class="tab-pane"></div>
-						
-						
-							<div id="personal_divIII" class="tab-pane"></div>
-							<div id="personal_divIV" class="tab-pane"></div>
-						
-						<div id="personal_divV" class="tab-pane"></div>
 					</div>
-						
+					
 
 				</div>
   			</div>

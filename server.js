@@ -19,29 +19,30 @@ app.get('/reportedProjectHours', function(req, res) {
 	]);
 });
 
+app.get('/personal_II', function(req, res) {
+    res.send([
+    ['Månad', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
+        ['Januari',  1000, 400, 50, 10],
+        ['Februari',  1200, 200, 20, 1],
+        ['Mars',  800, 20, 12, 15],
+        ['April',  1700, 5, 23, 4],
+        ['Maj',  100, 10, 8, 22],
+        ['Juni',  850, 400, 50, 10],
+        ['Juli',  1000, 400, 50, 10],
+        ['Augusti',  1000, 400, 50, 10],
+        ['September',  1000, 400, 50, 10],
+        ['Oktober',  1000, 400, 50, 10],
+        ['November',  1000, 400, 50, 10],
+        ['December',  1000, 400, 50, 10]
+    ]);
+});
+
+
 app.get('/certifiedProjectHours', function(req, res) {
     res.send([
         ['Projekt1', 70 ], ['Projekt2', 120], ['Projekt3', 50], ['Projekt4', 210]
     ]);
 });
-
-/*app.get('/companyPerformance', function(req, res) {
-	res.send([ 
-		['Tid', 'Lisa', 'Kalle', 'Bengt'],
-        ['2004', 20, 100, -10 ],
-        ['2005', 12, 90, 20],
-        ['2006', -32, 5, 0],
-        ['2007', 13, 10, 0],
-        ['2008', 20, 100, -10 ],
-        ['2009', 12, 90, 20],
-        ['2010', -32, 5, 0],
-        ['2011', 13, 10, 0],
-        ['2012', 20, 100, -10 ],
-        ['2013', 12, 90, 20],
-        ['2014', -32, 5, 0],
-        ['2015', 13, 10, 0]
-         ]);
-});*/
 
 app.get('/overtime', function(req, res) {
     res.send([
@@ -62,13 +63,6 @@ app.get('/absence', function(req, res) {
     
   ]);
 });
-
-/*app.get('/dagsForsalj', function(req, res) {
-	res.send([
-          ['Label', 'Value'],
-          ['Mkr', 80]
-          ]);
-});*/
 
 app.get('/reportedHours', function(req, res) {
   res.send([      
@@ -180,10 +174,7 @@ app.get('/personalUnreported', function(req, res) {
         ])
 });
 
-
-
-
-/*app.get('/users', function(req, res) {
+app.get('/users', function(req, res) {
   res.send([
     ['x', 'Aktiva', 'Orapporterade pass', 'Inaktiva'],
     ['Januari',   100,       111,       12],
@@ -199,9 +190,21 @@ app.get('/personalUnreported', function(req, res) {
     ['November',   98,       96,           10],
     ['December',   100,       120,           27]
   ]);
-});*/
+});
 
+app.get('/projectstatuspersonal', function(req, res) {
+    res.send([
+    ['Vecka', 'Timmar kvar'],
+    ['1', 100],
+    ['2', 95],
+    ['3', 90],
+    ['4', 85],
+    ['5', 50],
+    ['6', -1],
+    ['7', -10]
 
+        ])
+});
 
 
 if (!module.parent) {

@@ -4,7 +4,7 @@
 
 .container{
 	width: auto;
-	min-width: 1500px;
+	min-width: 1200px;
 	min-height: 1000px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 #personal_content{
-	width: 1300px;
+	width: 1200px;
 }
 
 #personal_options{
@@ -43,27 +43,41 @@
 }
 
 h1{
-
+	padding-left: 150px;
 }
 
-#personal_div{
-	width: 643px;
-	height: 400px;
-	float:left;
-	margin-bottom: 25px;
+#navi{
+	padding-left: 50px;
+}
+
+#person_II{
 	border-bottom-style: solid;
 	border-bottom-color: #DCDCDC;
 	border-bottom-width: 1px;
 }
 
-#personal_divII{
-	width:643px;
+#personal_div{
+	width: 643px;
 	height: 400px;
+	margin-top: 25px;
+}
+
+#personal_divII{
+	/*width:400px;
+	height: 400px;*/
+	border-right-style: solid;
+	border-right-color: #DCDCDC;
+	border-right-width: 1px;  
+	margin-top: 25px;
+}
+
+#projectstatuspersonal_div{
+	width:650px;
+	margin-top: 25px;
 	float: right;
 	border-left-style: solid;
 	border-left-color: #DCDCDC;
 	border-left-width: 1px;
-	margin-bottom: 25px;
 }
 
 #personal_divIII{
