@@ -27,6 +27,7 @@
 	  	<!--Load the personal.js-->
 	  	<script src="personal.js"> </script>
 	  	<!--<script src="personalPie.js"></script>-->
+	  	<!--<script src="test.js"> </script>-->
   </head>
   <body>
   		<div class="container">
@@ -85,10 +86,10 @@
     						<li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
     					</ul>
     				</li>
-    				<li><a href="#person_II" data-toggle="tab">Alternativ personlig</a></li>
+    				<li><a href="#test_content" data-toggle="tab">Alternativ personlig</a></li>
 				</ul>
     			<div class="tab-content">
-					<div id="pie_content" class="tab-pane active">
+					<div id="pie_content" class="tab-pane">
 						<div id="pie_options" class="tab-pane">
 							<ul class="nav nav-pills">
 								<li><a href="#">Månad</a></li>
@@ -155,7 +156,7 @@
 						<div id="projectstatus_div" class="tab-pane"></div>
 					</div>
 
-					<div id="personal_content" class="tab-pane">
+					<div id="personal_content" class="tab-pane active">
 
 						<div id="personal_options" class="tab-pane">
 							<h1>Heggsson</h1>
@@ -173,12 +174,26 @@
 							  </ul>
 							</div>-->
 						</div>
+						<div>
+						<form>
+								<input type="radio" name="radio" id = "b1" checked>År
+								<input type="radio" name="radio" id = "b2">Månad
+								<input type="radio" name="radio" id = "b3">Vecka
+						</form>
+							</div>
 							<div id="person_II" class="tab-pane"></div>
 							<div id="projectstatuspersonal_div" class="tab-pane"></div>
 							<div id="personal_divII" class="tab-pane"></div>
-					</div>
+						</div>
 					
-
+						<!--<div id="test_content">
+							<div class = "btn-group">
+								<button class = "btn" id = "b1">År</button>
+								<button class = "btn" id = "b2">Månad</button>
+								<button class = "btn" id = "b3">Vecka</button>							
+							</div>
+							<div id="test" class="tab-pane"></div>
+						</div>-->
 				</div>
   			</div>
   		</div>

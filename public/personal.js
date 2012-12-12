@@ -5,7 +5,8 @@
       google.setOnLoadCallback(on_load);
 
       function on_load() {
-        $.getJSON('/personal_II', drawPersonal_II);
+        dataPos();
+        $.getJSON('/personalYear', drawPersonal_II);
         $.getJSON('/personalProjectHours', drawPersonalProjectHours);
         $.getJSON('/projectstatuspersonal', drawStatuspersonal);
       }
@@ -30,7 +31,46 @@
       }
 
 
+      function dataPos(){
+
+
+        var year = document.getElementById('b1');
+        var month = document.getElementById('b2');
+        var week = document.getElementById('b3');
+
+
+            year.onclick = drawYear;
+            month.onclick = drawMonth;
+            week.onclick = drawWeek;
+      }
+
+      function drawYear(){
+        $.getJSON('/personalYear', drawPersonal_II);
+      }
+
+      function drawMonth(){
+        $.getJSON('/personalMonth', drawPersonal_II);  
+      }
+
+      function drawWeek(){
+        $.getJSON('/personalWeek', drawPersonal_II);
+      }
+
       function drawPersonal_II(personal) {
+          
+
+          var data = google.visualization.arrayToDataTable(personal);
+
+          var options = {
+            title: 'Personöversikt',
+            hAxis: {slantedText:true}, //title: '', titleTextStyle: {color: 'black'}, 
+            width: 1100, height: 700
+          };
+
+          var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
+          chart.draw(data, options);
+      }
+      /*function drawPersonal_II(personal) {
           var data = google.visualization.arrayToDataTable(personal);
 
           var options = {
@@ -41,7 +81,7 @@
 
           var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
           chart.draw(data, options);
-      }
+      }*/
 
       function drawStatuspersonal(projectstatuspersonal) {
         var data = google.visualization.arrayToDataTable(projectstatuspersonal);

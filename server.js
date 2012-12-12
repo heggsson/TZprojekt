@@ -19,24 +19,46 @@ app.get('/reportedProjectHours', function(req, res) {
 	]);
 });
 
-app.get('/personal_II', function(req, res) {
+app.get('/personalYear', function(req, res) {
     res.send([
     ['Månad', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
-        ['Januari',  1000, 400, 50, 10],
-        ['Februari',  1200, 200, 20, 1],
-        ['Mars',  800, 20, 12, 15],
-        ['April',  1700, 5, 23, 4],
-        ['Maj',  100, 10, 8, 22],
-        ['Juni',  850, 400, 50, 10],
-        ['Juli',  1000, 400, 50, 10],
-        ['Augusti',  1000, 400, 50, 10],
-        ['September',  1000, 400, 50, 10],
-        ['Oktober',  1000, 400, 50, 10],
-        ['November',  1000, 400, 50, 10],
-        ['December',  1000, 400, 50, 10]
+        ['Januari',  175, 8, 0, 10],
+        ['Februari',  190, 22, 5, 12],
+        ['Mars',  150, 5, 24, 0],
+        ['April',  180, 2, 7, 4],
+        ['Maj',  100, 0, 60, 0],
+        ['Juni',  170, 5, 0, 10],
+        ['Juli',  200, 30, 5, 7],
+        ['Augusti',  150, 5, 15, 0],
+        ['September',  180, 0, 7, 16],
+        ['Oktober',  192, 27, 8, 18],
+        ['November',  186, 0, 7, 0],
+        ['December',  189, 3, 0, 0]
     ]);
 });
 
+app.get('/personalMonth', function(req, res) {
+    res.send([
+    ['Vecka', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
+        ['v1',  43, 5, 2, 0],
+        ['v2',  53, 13, 0, 0],
+        ['v3',  30, 0, 10, 5],
+        ['v4',  45, 5, 2, 3]
+    ]);
+});
+
+app.get('/personalWeek', function(req, res){
+    res.send([
+        ['Dag', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
+        ['Måndag',  12, 3, 0, 0],
+        ['Tisdag',  5, 2, 0, 5],
+        ['Onsdag',  9, 0, 0, 0],
+        ['Torsdag',  7, 0, 1, 0],
+        ['Fredag',  8, 0, 1, 0],
+        ['Lördag',  0, 0, 0, 0],
+        ['Söndag',  0, 0, 0, 0]
+        ])
+})
 
 app.get('/certifiedProjectHours', function(req, res) {
     res.send([
