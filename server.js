@@ -1,14 +1,14 @@
+
 var http = require('http');
 var fs = require('fs');
 var sys = require('sys');
 var express = require('express');
 
-
 const PORT = 8888;
 const HOST = '0.0.0.0';
 
-
 var app = module.exports = express.createServer();
+var redis = require('redis');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -19,32 +19,75 @@ app.get('/reportedProjectHours', function(req, res) {
 	]);
 });
 
-app.get('/personalYear', function(req, res) {
-    res.send([
-    ['Månad', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
-        ['Januari',  175, 8, 0, 10],
-        ['Februari',  190, 22, 5, 12],
-        ['Mars',  150, 5, 24, 0],
-        ['April',  180, 2, 7, 4],
-        ['Maj',  100, 0, 60, 0],
-        ['Juni',  170, 5, 0, 10],
-        ['Juli',  200, 30, 5, 7],
-        ['Augusti',  150, 5, 15, 0],
-        ['September',  180, 0, 7, 16],
-        ['Oktober',  192, 27, 8, 18],
-        ['November',  186, 0, 7, 0],
-        ['December',  189, 3, 0, 0]
-    ]);
+var months = {
+    '01': 'Januari',
+    '02': 'Februari',
+    '03': 'Mars',
+    '04': 'April',
+    '05': 'Maj',
+    '06': 'Juni',
+    '07': 'Juli',
+    '08': 'Augusti',
+    '09': 'September',
+    '10': 'Oktober',
+    '11': 'November',
+    '12': 'December'
+}
+
+app.get('/personalYear/:user_id/:year', function(req, res) {
+    var client = redis.createClient();
+    var key = 'hours:' + req.params.user_id + ':year:' + req.params.year;
+    client.sort(key,
+        "get", "#",
+        "get", key + ":*->normal",
+        "get", key + ":*->overtime",
+        "get", key + ":*->absence",
+        function(err, data) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+
+            var result = [];
+            result[0] = ["Månad", 'Arbetade timmar', 'Övertid', 'Frånvaro'];
+            for (var i = 0; i < data.length; i += 4) {
+                result.push([
+                    months[data[i+0]],
+                    parseInt(data[i+1], 10),
+                    parseInt(data[i+2], 10),
+                    parseInt(data[i+3], 10)
+                ]);
+            }
+            res.send(result);
+        })
 });
 
-app.get('/personalMonth', function(req, res) {
-    res.send([
-    ['Vecka', 'Arbetade timmar', 'Övertid', 'Frånvaro', 'Orapporterade timmar'],
-        ['v1',  43, 5, 2, 0],
-        ['v2',  53, 13, 0, 0],
-        ['v3',  30, 0, 10, 5],
-        ['v4',  45, 5, 2, 3]
-    ]);
+app.get('/personalMonth/:user_id/:year/:month', function(req, res) {
+    var client = redis.createClient();
+    var key = 'hours:' + req.params.user_id + ':year:' + req.params.year + ':month:' + req.params.month;
+    client.sort(key,
+        "get", "#",
+        "get", key + ":*->normal",
+        "get", key + ":*->overtime",
+        "get", key + ":*->absence",
+        function(err, data) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+
+            var result = [];
+            result[0] = ['Datum', 'Arbetade timmar', 'Övertid', 'Frånvaro'];
+            for (var i = 0; i < data.length; i += 4) {
+                result.push([
+                    parseInt(data[i+0], 10), 
+                    parseInt(data[i+1], 10),
+                    parseInt(data[i+2], 10),
+                    parseInt(data[i+3], 10)
+                ]);
+            }
+            res.send(result);
+        })
 });
 
 app.get('/personalWeek', function(req, res){
@@ -149,9 +192,37 @@ app.get('/personalHours', function(req, res) {
         ])
 });
 
-app.get('/personalProjectHours', function(req, res) {
+app.get('/personalProjectHoursYear/:user_id/:year', function(req, res) {
+    var client = redis.createClient();
+    var key = 'projectHours:' + req.params.user_id + ':year:' + req.params.year;
+    client.sort(key,
+        "get", "projects:*:title",
+        "get", key + ":*->hours",
+        function(err, data) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            var result = [];
+            for (var i = 0; i < data.length; i += 2) {
+                result.push([
+                    data[i+0],
+                    parseInt(data[i+1], 10)
+                ]);
+            }
+            res.send(result);
+        })
+});
+
+app.get('/personalProjectHoursMonth', function(req, res) {
     res.send([
-        ['Projekt1', 100 ], ['Projekt2', 150], ['Projekt3', 70], ['Projekt4', 230]
+        ['Projekt1', 10], ['Projekt2', 15], ['Projekt3', 25], ['Projekt4', 12]
+        ])
+});
+
+app.get('/personalProjectHoursWeek', function(req, res) {
+    res.send([
+        ['Projekt1', 8 ], ['Projekt2', 4], ['Projekt3', 20], ['Projekt4', 5]
         ])
 });
 

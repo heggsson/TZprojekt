@@ -6,8 +6,8 @@
 
       function on_load() {
         dataPos();
-        $.getJSON('/personalYear', drawPersonal_II);
-        $.getJSON('/personalProjectHours', drawPersonalProjectHours);
+        $.getJSON('/personalYear/HEGGSON/2012', drawPersonal_II);
+        $.getJSON('/personalProjectHoursYear/HEGGSON/2012', drawPersonalProjectHours);
         $.getJSON('/projectstatuspersonal', drawStatuspersonal);
       }
 
@@ -32,28 +32,27 @@
 
 
       function dataPos(){
-
-
         var year = document.getElementById('b1');
         var month = document.getElementById('b2');
         var week = document.getElementById('b3');
-
-
             year.onclick = drawYear;
             month.onclick = drawMonth;
             week.onclick = drawWeek;
       }
 
       function drawYear(){
-        $.getJSON('/personalYear', drawPersonal_II);
+        $.getJSON('/personalYear/HEGGSON/2012', drawPersonal_II);
+        $.getJSON('/personalProjectHoursYear/HEGGSON/2012', drawPersonalProjectHours);
       }
 
       function drawMonth(){
-        $.getJSON('/personalMonth', drawPersonal_II);  
+        $.getJSON('/personalMonth/HEGGSON/2012/01', drawPersonal_II);
+        $.getJSON('/personalProjectHoursMonth', drawPersonalProjectHours);  
       }
 
       function drawWeek(){
         $.getJSON('/personalWeek', drawPersonal_II);
+        $.getJSON('/personalProjectHoursWeek', drawPersonalProjectHours);
       }
 
       function drawPersonal_II(personal) {
@@ -64,7 +63,8 @@
           var options = {
             title: 'Personöversikt',
             hAxis: {slantedText:true}, //title: '', titleTextStyle: {color: 'black'}, 
-            width: 1100, height: 700
+            width: 1100, height: 700,
+            isStacked: true
           };
 
           var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
