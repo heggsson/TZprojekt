@@ -25,7 +25,7 @@
       }
 
       function drawOcc(occupancy_data) {
-      // Create and populate the data table.
+
         var data = google.visualization.arrayToDataTable(occupancy_data);
 
         var options = {
@@ -34,7 +34,6 @@
           vAxis: {title: "Alternativ"},
           hAxis: {title: "Timmar (h)"}}          
         
-          // Create and draw the visualization.
         var chart = new google.visualization.BarChart(document.getElementById('occupancy_div'));
         
         chart.draw(data, options);

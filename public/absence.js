@@ -29,8 +29,7 @@
   
     var formatter = new google.visualization.ColorFormat();
     formatter.addRange(1, 100, 'red', 'white');
-    //formatter.addRange(10, 20, 'red', 'white');
-    formatter.format(data, 1); // Apply formatter to second column  
+    formatter.format(data, 1);  
     formatter.format(data, 2);
     formatter.format(data, 3);
     formatter.format(data, 4);

@@ -4,7 +4,7 @@
       // Set a callback to run when the Google Visualization API is loaded.
       google.setOnLoadCallback(on_load);
 
-      function on_load() {
+      function on_load(){
         dataPos();
         $.getJSON('/personalYear/HEGGSON/2012', drawPersonal_II);
         $.getJSON('/personalProjectHoursYear/HEGGSON/2012', drawPersonalProjectHours);
@@ -17,15 +17,12 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Onions');
-        //data.addRows(app.write());
         data.addRows(personalProjectHours);
 
-        // Set chart options
         var options = {'title':'Resursfördelning: Attesterade h per projekt',
                        'width':450,
                        'height':300};
 
-        // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('personal_divII'));
         chart.draw(data, options);
       }
@@ -62,7 +59,7 @@
 
           var options = {
             title: 'Personöversikt',
-            hAxis: {slantedText:true}, //title: '', titleTextStyle: {color: 'black'}, 
+            hAxis: {slantedText:true},
             width: 1100, height: 700,
             isStacked: true
           };
@@ -70,18 +67,6 @@
           var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
           chart.draw(data, options);
       }
-      /*function drawPersonal_II(personal) {
-          var data = google.visualization.arrayToDataTable(personal);
-
-          var options = {
-            title: 'Personöversikt',
-            hAxis: {title: 'Månad', titleTextStyle: {color: 'black'}, slantedText:true},
-            width: 1100, height: 700
-          };
-
-          var chart = new google.visualization.ColumnChart(document.getElementById('person_II'));
-          chart.draw(data, options);
-      }*/
 
       function drawStatuspersonal(projectstatuspersonal) {
         var data = google.visualization.arrayToDataTable(projectstatuspersonal);

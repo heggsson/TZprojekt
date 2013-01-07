@@ -16,8 +16,6 @@
 	  	<script src="reportedHours.js"> </script>
 	  	<!--Load the unreported.js-->
 	  	<script src="unreported.js"> </script>	  	
-	  	<!--Load the userstatus.js-->
-	  	<!--<script src="userstatus.js"> </script>-->
 	  	<!--Load the overtime.js-->
 	  	<script src="overtime.js"> </script>
 	  	<!--Load the absence.js-->
@@ -26,8 +24,6 @@
 	  	<script src="projectstatus.js"> </script>
 	  	<!--Load the personal.js-->
 	  	<script src="personal.js"> </script>
-	  	<!--<script src="personalPie.js"></script>-->
-	  	<!--<script src="test.js"> </script>-->
   </head>
   <body>
   		<div class="container">
@@ -66,15 +62,7 @@
     					</ul>
     				</li>
     				<li><a href="#personal_content" data-toggle="tab">Person översikt</a></li>
-    				<li class="dropdown">
-    					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    						Projektstatus
-    						<b class="caret"></b>
-    					</a>
-    					<ul class="dropdown-menu">
-    						<li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
-    					</ul>
-    				</li>
+    				<li><a href="#projectstatus_content" data-toggle="tab">Projektstatus</a></li>
 				</ul>
     			<div class="tab-content">
 					<div id="pie_content" class="tab-pane">
@@ -88,8 +76,6 @@
 						<div id="pie_div" class="tab-pane"></div>
 						<div id="pie_divII" class="tab-pane"></div>
 					</div>
-					<!--<div id="line_div" class="tab-pane"></div>	-->
-					<!--<div id="gauge_div" class="tab-pane"></div>-->
 					<div id="reportedHours_content" class="tab-pane">
 						<div id="reportedHours_options" class="tab-pane">
 							<ul class="nav nav-pills">
@@ -112,34 +98,18 @@
 						</div>
 						<div id="unreportedHours_div" class="tab-pane"></div>
 					</div>
-					<!--<div id="user_div" class="tab-pane"></div>-->
 					<div id="overtime_content" class="tab-pane">
 						<div id="overtime_options" class="tab-pane">
-							<!--<ul class="nav nav-pills">
-								<li><a href="#">Månad</a></li>
-								<li><a href="#">Kvartal</a></li>
-								<li><a href="#">År</a></li>
-							</ul>-->
 						</div>
 						<div id="overtime_div" class="tab-pane"></div>
 					</div>
 					<div id="absence_content" class="tab-pane">
 						<div id="absence_options" class="tab-pane">
-							<!--<ul class="nav nav-pills">
-								<li><a href="#">Månad</a></li>
-								<li><a href="#">Kvartal</a></li>
-								<li><a href="#">År</a></li>
-							</ul>-->
 						</div>
 						<div id="absence_div" class="tab-pane"></div>
 					</div>
 					<div id="projectstatus_content" class="tab-pane">
 						<div id="projectstatus_options" class="tab-pane">
-							<!--<ul class="nav nav-pills">
-								<li><a href="#">Månad</a></li>
-								<li><a href="#">Kvartal</a></li>
-								<li><a href="#">År</a></li>
-							</ul>-->
 						</div>
 						<div id="projectstatus_div" class="tab-pane"></div>
 					</div>
@@ -148,19 +118,6 @@
 
 						<div id="personal_options" class="tab-pane">
 							<h1>Heggsson</h1>
-							<!--Både denna dropdown och typehead kräver plugin!-->
-
-							<!--<div class="btn-group">
-							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-							    Anställd
-							    <span class="caret"></span>
-							  </a>
-							  <ul class="dropdown-menu">
-							    <li>Anställd 1</li>
-								<li>Anställd 2</li>
-								<li>Anställd 3</li>
-							  </ul>
-							</div>-->
 						</div>
 						<div>
 						<form>
@@ -173,15 +130,6 @@
 							<div id="projectstatuspersonal_div" class="tab-pane"></div>
 							<div id="personal_divII" class="tab-pane"></div>
 						</div>
-					
-						<!--<div id="test_content">
-							<div class = "btn-group">
-								<button class = "btn" id = "b1">År</button>
-								<button class = "btn" id = "b2">Månad</button>
-								<button class = "btn" id = "b3">Vecka</button>							
-							</div>
-							<div id="test" class="tab-pane"></div>
-						</div>-->
 				</div>
   			</div>
   		</div>

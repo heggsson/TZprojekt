@@ -10,7 +10,6 @@
 
 #pie_content{
 	width: 950px;
-	/*text-align: center;*/
 	float: left;
 	overflow: hidden;
 }
@@ -39,7 +38,6 @@
 
 #personal_options{
 	width: 1200px;
-	/*position: relative;*/
 }
 
 h1{
@@ -63,8 +61,6 @@ h1{
 }
 
 #personal_divII{
-	/*width:400px;
-	height: 400px;*/
 	border-right-style: solid;
 	border-right-color: #DCDCDC;
 	border-right-width: 1px;  
@@ -102,4 +98,3 @@ h1{
 	margin-left: 50px;
 	margin-top: 50px;
 }
-

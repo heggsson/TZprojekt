@@ -19,9 +19,6 @@
           'height':600,
           colors: ['green']
         };
-
-
-
       
         var chart = new google.visualization.AreaChart(document.getElementById('projectstatus_div'));
         chart.draw(data, options);

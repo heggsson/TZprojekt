@@ -32,7 +32,7 @@
     var formatter = new google.visualization.ColorFormat();
     formatter.addRange(0, 10, '#008F00', 'white');
     formatter.addRange(10, 500, 'red', 'none');
-    formatter.format(data, 1); // Apply formatter to second column  
+    formatter.format(data, 1);
     formatter.format(data, 2);
     formatter.format(data, 3);
     formatter.format(data, 4);
